@@ -1,0 +1,14 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week1/Day2/ExerciseXP/ExerciseXP.py
+suggestions for improvement:
+- In Exercise 1, while the code correctly uses sets and their operations, it doesn't explicitly handle the removal of the 'last' added number since sets are unordered.  Consider a different approach or clarifying the instructions. 
+- Exercise 2 correctly states the immutability of tuples but doesn't demonstrate it with executable code.
+- Exercise 4 could be improved by generating the float sequence using a loop or range function, avoiding hardcoding. This would better align with the instructions.
+- Exercise 7's input handling could be more robust; it assumes correctly formatted input. Consider error handling.
+- Exercise 9's bonus section could be improved by incorporating a list of names and using a loop for age input, offering a more complete solution.
+- Add comments to explain what each part of your code does.
+Brief justification:
+- correctness: The code generally addresses the exercises' core functionalities; however, some points lack complete accuracy or the most elegant solution based on the instructions (e.g., removing the 'last' element from an unordered set, generating the float sequence).  The tuple immutability point is only explained in text rather than demonstrated in code.  Most exercises however are correctly answered. The overall correctness is reduced because of those points. 
+- readability: The code is reasonably readable, though some comments would enhance understanding, particularly in the less straightforward parts.  Variable names are generally descriptive.
+- performance: The performance is generally good for the tasks.  No significant inefficiencies are apparent, though some exercises could be optimized with more efficient algorithms.
+- security: No security vulnerabilities are present in the provided code.  It only interacts with user input in a controlled manner.
+
