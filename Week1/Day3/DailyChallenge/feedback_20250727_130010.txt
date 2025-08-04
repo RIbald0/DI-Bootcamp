@@ -1,0 +1,11 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week1/Day3/DailyChallenge/DailyChallenge.py
+suggestions for improvement:
+- The code for Challenge 1 could benefit from more concise variable names (e.g., `letter_index` instead of `indices_dict`).
+- In Challenge 2, the data cleaning and affordable item determination could be encapsulated into functions for better organization and reusability.  Repeating the same code block three times is inefficient.  A function would make the code cleaner and easier to maintain.
+- Add comments explaining the purpose of each major section of code in both challenges.
+Brief justification:
+- correctness: The code correctly implements both challenges. Challenge 1 accurately creates a dictionary mapping letters to their indices in a word, as specified in the chapter content.  Challenge 2 effectively cleans the input data, determines affordable items, and returns the sorted list or "Nothing" as instructed.  The code directly addresses all aspects of the problem descriptions in the chapter content.
+- readability: The code is generally readable. However, some variable names could be more descriptive, and using functions to modularize the code in Challenge 2 would improve readability significantly.  The repeated code blocks also detract from readability.
+- performance: The code's performance is acceptable for small inputs. However, for very large inputs, the repeated code blocks in Challenge 2 would become inefficient.  Refactoring to use functions would improve performance by avoiding redundant operations. The use of `enumerate` and direct dictionary manipulation in Challenge 1 shows efficient coding practices.
+- security: The code doesn't have any obvious security vulnerabilities. It's a simple program that doesn't handle external inputs in a way that could be exploited.
+

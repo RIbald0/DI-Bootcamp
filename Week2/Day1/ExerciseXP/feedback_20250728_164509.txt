@@ -1,0 +1,11 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week2/Day1/ExerciseXP/ExerciseXP.py
+suggestions for improvement:
+- In `make_shirt()`, consider adding docstrings to clearly explain the purpose and parameters.
+- Exercise 6: The `make_great()` function modifies the original list.  While functional, it's generally better practice to create a new list with the modified names to avoid unintended side effects. Consider creating a new list and returning it instead of modifying the original.
+- Exercise 7: The bonus sections for floating-point temperatures and month-based seasons are well-implemented. However, there's no error handling for invalid month input. Add input validation to handle cases where the user enters a number outside the range 1-12.
+Brief justification:
+- correctness: The code accurately implements the functionality described in exercises 1-6. Exercise 7's core functionality is correct, and the bonus features (floating-point temperatures and month-based seasons) are also implemented.  The minor deduction is due to the lack of input validation in Exercise 7's bonus section and the direct list modification in Exercise 6.
+- readability: The code is generally well-structured and easy to follow. However, some functions could benefit from more descriptive docstrings to enhance understanding.  Variable names are mostly clear. The use of f-strings for output improves readability.
+- performance: The code's performance is efficient for the tasks involved. There are no obvious performance bottlenecks. Random number generation is appropriately used, and loops iterate efficiently.
+- security: There are no apparent security vulnerabilities in the code. The code does not interact with external resources or handle user inputs in a way that could introduce security risks. Input validation, while missing in exercise 7, is not a security issue but a functionality issue. 
+
