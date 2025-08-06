@@ -1,0 +1,15 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week3/Day1/ExerciseXP/ExerciseXP.py
+suggestions for improvement:
+- Exercise 1: The Siamese class is correctly implemented by inheriting from the Cat class, although it doesn't add any unique methods.  The solution correctly instantiates cat objects, adds them to a list, and uses the Pets class to manage them. The output correctly reflects the functionality. 
+- Exercise 2: The Dog class is well-implemented, with clear and concise methods for barking, calculating run speed, and determining fight winners.  The fight logic correctly considers the run speed and weight of both dogs.
+- Exercise 3:  This exercise is not included in the provided code.
+- Exercise 4: The Person and Family classes are correctly implemented. The `is_18()`, `born()`, `check_majority()`, and `family_presentation()` methods function as expected. The code effectively models family members and their interactions. However, the `check_majority()` method could be improved by handling the case where no person with that first name exists within the family. Currently, it prints a default message that's not very user-friendly; a more specific message indicating that the name was not found could be better.
+Correctness: 90%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week3/Day1/ExerciseXP/ExerciseXP2.py
+suggestions for improvement:
+- The `play` method's handling of dog names could be improved for clarity and robustness.  Consider using a loop to iterate through the `args` and format the names nicely, rather than relying on a single join which fails if `args` is empty.
+- Add docstrings to all methods and the class for better readability and understanding. 
+- In `__init__`, explicitly initializing the `name`, `age`, and `weight` attributes from `super().__init__` would improve clarity and maintainability. Add error handling (e.g., type checking) to ensure that the input data (name, age, weight) is valid.
+Correctness: 95%
+-----
