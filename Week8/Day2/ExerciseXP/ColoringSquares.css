@@ -1,0 +1,132 @@
+body {
+    background-color: grey;
+    padding: 20px;
+
+}
+
+.main-container {
+    display: flex;
+    gap: 20px;
+}
+
+.clear-button {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button {
+    padding: 15px 20px;
+    font-size: 1.5em;
+    border-radius: 12px;
+    border: 2px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.color-palette {
+
+    display: grid;
+    grid-template-columns: repeat(3, 60px);
+    gap: 5px;
+}
+
+.color-swatch {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: darkorange;
+}
+
+.light-orange {
+    background-color: gold;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.lime-green {
+    background-color: yellowgreen;
+}
+
+.light-green {
+    background-color: lightgreen;
+}
+
+.dark-green {
+    background-color: green;
+}
+
+.turquoise {
+    background-color: turquoise;
+}
+
+.cyan {
+    background-color: cyan;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.indigo {
+    background-color: indigo;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.brown {
+    background-color: brown;
+}
+
+.tan {
+    background-color: tan;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.silver {
+    background-color: silver;
+}
+
+.black {
+    background-color: black;
+}
+
+
+.canvas-grid {
+    display: grid;
+    grid-template-columns: repeat(32, 25px);
+    grid-template-rows: repeat(20, 25px);
+    background-color: #ccc;
+    border: 2px solid #333;
+    gap: 1px;
+}
+
+.canvas-cell {
+    background-color: #fff;
+}
+
+.canvas-cell:hover {
+    background-color: #f5f5f5;
+    cursor: crosshair;
+}
