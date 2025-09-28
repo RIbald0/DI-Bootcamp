@@ -1,0 +1,24 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form #2</title>
+</head>
+
+<body>
+    <form action="ExerciseXP2.html" method="POST" id="form">
+        <h5>Name</h5>
+        <input type="text" name="firstName" id="firstName">
+        <h5>Comments</h5>
+        <textarea name="comment" rows="5" id="textArea"></textarea><br><br>
+        <input type="submit" value="Send" id="inputButton">
+    </form>
+</body>
+
+</html>
+
+<script>
+    //Since the form uses method="POST", the submission will not be displayed in the URL but in the body of the request.
+    //In this case it can be seen in the Network Tab in the Payload
+</script>
