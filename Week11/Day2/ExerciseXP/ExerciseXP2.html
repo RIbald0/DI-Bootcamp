@@ -1,0 +1,28 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 2 : Promises</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const promise = new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve('success')
+        }, 4000);
+    });
+
+    promise
+        .then(result => {
+            console.log(`The Promise fulfilled with: ${result}`);
+        });
+
+    console.log("Waiting for the 4-second Promise...")
+
+</script>
