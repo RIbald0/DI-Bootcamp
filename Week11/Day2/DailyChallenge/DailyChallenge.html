@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily challenge: Play with words 1st</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const makeAllCaps = (array) => new Promise((resolve, reject) => {
+        const isAllStrings = array.every(function(item){
+            return typeof item === 'string' 
+        })
+        if (isAllStrings) {
+            const uppercased = array.map(item => item.toUpperCase())
+            resolve(uppercased)
+        } else {
+            reject('The array does not contain only strings.')
+
+        }
+            
+        });
+
+
+        const sortWords = (array) => new Promise((resolve, reject) => {
+            if (array.length > 4){
+                const sortedArray = array.sort()
+                resolve(sortedArray)
+            } else {
+                reject('The array length is 4 or less.')
+
+            }
+        })
+
+    //in this example, the catch method is executed
+    makeAllCaps([1, "pear", "banana"])
+        .then((arr) => sortWords(arr))
+        .then((result) => console.log(result))
+        .catch(error => console.log(error))
+
+    //in this example, the catch method is executed
+    makeAllCaps(["apple", "pear", "banana"])
+        .then((arr) => sortWords(arr))
+        .then((result) => console.log(result))
+        .catch(error => console.log(error))
+
+    //in this example, you should see in the console, 
+    // the array of words uppercased and sorted
+    makeAllCaps(["apple", "pear", "banana", "melon", "kiwi"])
+        .then((arr) => sortWords(arr))
+        .then((result) => console.log(result)) //["APPLE","BANANA", "KIWI", "MELON", "PEAR"]
+        .catch(error => console.log(error))
+
+</script>
