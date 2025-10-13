@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Giphy API</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const getObject = () => {
+        fetch('https://api.giphy.com/v1/gifs/search?q=hilarious&rating=g&api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My')
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+
+                } else {
+                    throw new Error(`Request failed with status ${response.status}: ${response.statusText}`)
+                }
+            }).then((obj) => {
+                console.log(obj)
+            })
+    }
+
+    getObject()
+
+</script>
