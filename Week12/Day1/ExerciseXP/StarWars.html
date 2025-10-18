@@ -1,0 +1,145 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Web App Using AJAX API</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body {
+            background-color: #000000;
+            background-image: url("starWars.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 100vh;
+            margin: 0;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #containerArea {
+            width: 300px;
+            padding: 25px 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-sizing: border-box;
+
+            color: #FFE81F;
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #FFE81F;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(255, 232, 31, 0.5);
+        }
+
+        #containerArea h1 {
+            font-size: 2em;
+            text-shadow: 0 0 8px #FFE81F;
+            margin-bottom: 15px;
+        }
+
+        #containerArea p {
+            font-size: 1.1em;
+            margin: 8px 0;
+            color: white;
+        }
+
+        #buttonFind {
+            width: 300px;
+            padding: 15px 40px;
+            font-size: 1.3em;
+            box-sizing: border-box;
+
+            background-color: #008CBA;
+            color: #E0FFFF;
+            border: 3px solid #00FFFF;
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 2px;
+
+            box-shadow: 0 0 15px #00FFFF, inset 0 0 10px #00FFFF;
+            transition: all 0.2s ease-in-out;
+        }
+
+        #containerArea h2 {
+            color: #FFE81F;
+            text-shadow: 0 0 5px #FFE81F;
+        }
+
+        .error-message {
+            color: red !important;
+            text-shadow: 0 0 10px red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="containerArea">
+    </div>
+    <button id="buttonFind">Find Someone</button>
+</body>
+
+</html>
+<script>
+
+    const findCharachter = document.getElementById('buttonFind')
+    const container = document.getElementById('containerArea')
+
+    const randomStarWars = () => {
+        const maxAmount = 83;
+        const randomId = Math.floor(Math.random() * maxAmount + 1);
+        container.innerHTML = '<h2>Loading Character... <i class="fa-solid fa-spinner fa-spin-pulse"></i><h2>'
+        fetch(`https://www.swapi.tech/api/people/${randomId}`)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+
+                } else {
+                    throw new Error(`Request failed with status ${response.status}: ${response.statusText}`)
+                }
+            }).then((obj) => {
+                const nameCharachter = obj.result.properties.name
+                const heightCharachter = obj.result.properties.height
+                const genderCharachter = obj.result.properties.gender
+                const yearCharachter = obj.result.properties.birth_year
+                const worldCharachter = obj.result.properties.homeworld
+                return fetch(worldCharachter)
+                    .then((response) => {
+                        return response.json()
+                    }).then((obj) => {
+                        obj.result.properties.name
+                        return {
+                            name: nameCharachter,
+                            height: heightCharachter,
+                            gender: genderCharachter,
+                            year: yearCharachter,
+                            world: obj.result.properties.name
+                        }
+
+                    })
+
+            }).then((finalStep) => {
+                container.innerHTML =
+                    `<h1>${finalStep.name}</h1>
+                        <p>Height: ${finalStep.height}</p>
+                        <p>Gender: ${finalStep.gender}</p>
+                        <p>Birth Year: ${finalStep.year}</p>
+                        <p>Home World: ${finalStep.world}</p>`
+            })
+
+            .catch((error) => {
+                container.innerHTML = 'Oh No! That person is not available'
+
+            })
+    }
+
+
+    findCharachter.addEventListener('click', randomStarWars)
+
+
+</script>
