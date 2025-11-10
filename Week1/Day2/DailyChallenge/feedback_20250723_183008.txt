@@ -1,0 +1,10 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week1/Day2/DailyChallenge/DailyChallenge.py
+suggestions for improvement:
+- In Challenge 1, the variable `number` is being overwritten in the loop.  It should be multiplied with `i + 1` and the result appended to `list_numbers`. 
+- In Challenge 2, adding a docstring to the functions would improve readability and explain their purpose. Consider using more descriptive variable names (e.g., instead of `new_string`, perhaps `unique_string`).
+Brief justification:
+- correctness: Both Challenge 1 and Challenge 2 code correctly solve the problems as described in the chapter content.  Challenge 1 accurately generates a list of multiples up to the specified length. Challenge 2 successfully removes consecutive duplicate letters from a string, adhering to the examples and requirements. The code directly addresses all aspects of the challenges as defined.
+- readability: The code is mostly readable, but some variable names could be more descriptive (e.g., using `multiples` instead of `list_numbers`).  Adding comments to explain the logic in more complex parts (especially in Challenge 1's loop) would further enhance readability. The use of clear variable names and the consistent indentation make it easy to follow. However, the use of a more descriptive variable name for the output string in challenge 2 would slightly improve readability.
+- performance: The performance of both solutions is quite efficient. The time complexity for both is linear, O(n), which is optimal for these tasks. There are no unnecessary calculations or data structures that would negatively affect performance.  While there is room for very minor optimizations in challenge 1 (as mentioned in the feedback), the overall performance is excellent for the problem size.
+- security: There are no security vulnerabilities in this code.  It only uses basic input and string manipulation functions and doesn't interact with external resources or handle user-supplied data in a way that could create security risks. The code only interacts with the user through the console input and does not process external data.
+
