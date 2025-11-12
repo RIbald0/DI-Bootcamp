@@ -1,0 +1,12 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week2/Day2/DailyChallenge/DailyChallengeChallenges.py
+suggestions for improvement:
+- Challenge 1: The code unnecessarily creates `list_without_comma`.  The `.strip()` operation within the list comprehension is redundant since the `.split(',')` already handles the comma separation.  Directly sorting `words_list` would be more efficient and cleaner.
+- Challenge 1: The code converts the input to lowercase using `.lower()`. While this might be desired in some cases, it wasn't specified in the challenge instructions.  The code should maintain the original capitalization unless explicitly instructed to convert to lowercase.
+- Challenge 2: The code correctly identifies the longest word. However, the variable names (`max_lenght`, `current_lenght`) could be improved for readability (e.g., `max_length`, `current_length`).
+- Challenge 2: The function `longest_word` is correctly defined and works as expected.  However, it could benefit from a more descriptive name, such as `find_longest_word`.
+Brief justification:
+- correctness: The code for both challenges fulfills the core requirements. It correctly sorts the comma-separated words and finds the longest word in a sentence.  The minor deviations mentioned in the feedback do not significantly impact correctness, hence the 90% score.
+- readability: The code is generally readable, but some variable names and the unnecessary list creation in Challenge 1 detract from optimal readability.  Comments are sparsely used, making some of the logic harder to immediately comprehend.
+- performance: The algorithms used are efficient for the given tasks. However, removing the unnecessary list creation in Challenge 1 would improve performance slightly. The time complexity remains linear for both challenges.
+- security: There are no apparent security vulnerabilities in the provided code.  The code only takes user input and processes strings, preventing any potential for security risks.
+

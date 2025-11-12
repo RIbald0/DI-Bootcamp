@@ -1,0 +1,17 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/App.jsx
+suggestions for improvement:
+- Consider adding PropTypes to the UserFavoriteAnimals component to improve code robustness and documentation.
+- Ensure that all keys used in lists (e.g., in UserFavoriteAnimals) are unique and stable, and don't rely on array indices if the list is subject to change.
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/UserFavoriteAnimals.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/Exercise3.jsx
+suggestions for improvement:
+- Consider extracting the form element into a separate component if it becomes more complex.
+- Add more descriptive alt text to the image for better accessibility.
+Correctness: 100%
+-----
