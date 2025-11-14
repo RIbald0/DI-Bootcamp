@@ -1,0 +1,35 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day2/exercisexp/src/App.jsx
+suggestions for improvement:
+- The code in App.js is calling the Components. This is ok. However, there are no code submissions for the components themselves. I cannot assess their correctness
+Correctness: 0%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day2/exercisexp/src/Components/Car.jsx
+suggestions for improvement:
+- The Car component should receive carInfo as props, and then use the model from the object. Currently, carModel is being passed as props instead of carInfo.
+- App.js isn't present, but the instructions require defining the carinfo object there and passing it as props to the Car component.
+- The Garage component should be in a separate file, as indicated in the instructions.
+Correctness: 60%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day2/exercisexp/src/Components/Color.jsx
+suggestions for improvement:
+- The `useEffect` hook should have an empty dependency array to prevent it from running on every render.  Without it, the color update will cause an infinite loop in strict mode.
+- The `useEffect` should not update the state immediately, but should do it after 5 seconds as the instructions indicated.
+Correctness: 80%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day2/exercisexp/src/Components/Events.jsx
+suggestions for improvement:
+- Consider adding comments to explain complex logic or state transitions for improved readability.
+- The `changeButton` function can be simplified by directly negating the state: `setIsToggleOn(!isToggleOn)`
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day2/exercisexp/src/Components/Garage.jsx
+suggestions for improvement:
+- The code is correct in isolation but needs to be evaluated in the context of a larger application and the specific exercises it's intended to address.
+- Consider using more descriptive variable names if needed for complex logic.
+Correctness: 0%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day2/exercisexp/src/Components/Phone.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----

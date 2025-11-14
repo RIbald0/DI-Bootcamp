@@ -1,0 +1,12 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week1/Day3/ExerciseXP/ExerciseXP.py
+suggestions for improvement:
+- In Exercise 2, the bonus section could be improved by adding input validation to handle non-numeric age inputs gracefully.  A `try-except` block would prevent crashes.
+- In Exercise 3, the `type_of_clothes` and `international_competitors` values are initially strings, not lists as specified. Convert them to lists before processing.
+- Exercise 3's code for merging `more_on_zara` into `brand` overwrites the original `number_stores`. If you wanted to keep both, a different approach would be needed.
+- The code in Exercise 3 could be improved by using more descriptive variable names. For example, instead of  `list_brand`, use a name like `competitor_list`.
+Brief justification:
+- correctness: The code addresses most aspects of all four exercises. Exercise 1 correctly converts lists to dictionaries. Exercise 2 accurately calculates ticket costs. Exercise 3 mostly manipulates the dictionary as instructed, with minor errors (mentioned above) in data type handling and merging. Exercise 4 correctly creates the three dictionaries as specified. The minor issues prevent a perfect score.
+- readability: The code is generally readable, but some variable names (like those in Exercise 3) could be more descriptive. Consistent indentation and comments would improve readability further. The bonus section of Exercise 2 is a bit awkwardly integrated and could be broken into a separate, more clearly defined function.
+- performance: The code's performance is acceptable for the given tasks.  There are no significant inefficiencies.  The use of dictionary comprehensions in Exercise 4 is efficient.
+- security: No security vulnerabilities are present in this code. The code doesn't handle any sensitive data or interact with external systems.
+
