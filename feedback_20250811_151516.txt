@@ -1,0 +1,23 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week4/Day1/ExercisesXP/anagram_checker.py
+suggestions for improvement:
+- The `anagrams.py` file, responsible for the user interface, is missing.  The instructions clearly state to create this file with a menu and input validation.
+- Error handling for file I/O in `AnagramChecker.__init__` is absent.  The program might crash if `sowpods.txt` is not found or inaccessible.
+- The `get_anagrams` function could be optimized for performance. Currently, it iterates through the entire word list for every anagram check, making it inefficient for large word lists. Consider using a different data structure, such as a dictionary, for faster lookups.
+- Input validation in the missing `anagrams.py` is crucial and needs to be implemented (single word, alphabetic characters only).
+- The output formatting in the missing `anagrams.py` needs to match the specified user-friendly message format.
+Correctness: 80%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week4/Day1/ExercisesXP/anagrams.py
+suggestions for improvement:
+- The `AnagramChecker` class and its methods are not provided, making a complete correctness assessment impossible.  The code relies on an external class that needs to be implemented to achieve full functionality.
+- Error handling could be improved. Instead of simply printing error messages, the program could loop back to the input prompt, allowing the user to retry.
+- The performance could be improved by optimizing the anagram search algorithm within the `AnagramChecker` class.  Currently, the efficiency isn't assessed without seeing the implementation of `get_anagrams`.
+- Add more comprehensive input validation to handle unexpected input more gracefully. Consider using a `try-except` block to handle potential exceptions from file operations in `AnagramChecker`.
+- Consider adding a progress indicator if the anagram search takes a long time for very large word lists.
+Correctness: 85%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week4/Day1/ExercisesXP/sowpods.txt
+suggestions for improvement:
+- Checker failed to provide a response.
+Correctness: N/A%
+-----

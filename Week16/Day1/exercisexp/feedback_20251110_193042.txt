@@ -1,0 +1,67 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/eslint.config.js
+suggestions for improvement:
+- This code appears to be an ESLint configuration file, which is used for linting JavaScript and JSX code. It's not directly related to creating React components, using JSX, or styling in React as described in the Chapter Content/Questions.
+Correctness: 0%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/index.html
+suggestions for improvement:
+- The provided code appears to be the basic HTML structure for a React application, but it doesn't contain any React components or logic to address the exercises described in the chapter content.
+- The instructions require the creation of React components, JSX usage, styling, and component communication. The provided HTML doesn't fulfill any of these requirements.
+Correctness: 0%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/package-lock.json
+suggestions for improvement:
+- The provided code is a `package-lock.json` file, which is automatically generated and managed by npm. It does not contain any of the React code required to complete the exercises.
+- To complete the exercises you must provide `App.js`, `UserFavoriteAnimals.js` and `Exercise3.js` or similar React component files with the implementation of the instructions.
+Correctness: 0%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/package.json
+suggestions for improvement:
+- The provided code is a package.json file, which describes a React project's dependencies and scripts. It doesn't implement any of the specific instructions from the exercises, such as creating React components, using JSX, or applying styles.  Therefore, it does not address the exercises at all.
+Correctness: 0%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/App.css
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/App.jsx
+suggestions for improvement:
+- Consider adding PropTypes to the UserFavoriteAnimals component to validate the 'animals' prop.
+- The code is well-structured, but adding comments could improve readability, especially for complex logic or calculations.
+- While not strictly required by the exercise, consider using more descriptive variable names where appropriate for enhanced clarity.
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/Exercise.css
+suggestions for improvement:
+- This is CSS code, and its correctness depends on how it's used in conjunction with React components. Without the React component code, it's impossible to evaluate its correctness against the exercises. Please provide the corresponding React component code to accurately assess the solution.
+- Ensure that the CSS class name used in the React component matches the one defined in the CSS file.
+- Consider using more descriptive class names for better maintainability.
+Correctness: 0%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/Exercise3.jsx
+suggestions for improvement:
+- Consider adding more descriptive comments to explain the purpose of different sections of the component.
+- While the code is functional, ensuring consistent formatting (e.g., spacing) across the file will improve readability.
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/UserFavoriteAnimals.jsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/index.css
+suggestions for improvement:
+- The code provided is a CSS stylesheet, which is not directly related to the React exercises described in the prompt. The exercises focus on creating React components, using JSX, and styling within React. This CSS code doesn't address any of those specific instructions.
+Correctness: 0%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/src/main.jsx
+suggestions for improvement:
+- The provided code is the entry point of the React application, setting up the root element and rendering the App component. It does not address any of the specific exercises mentioned in the chapter content.
+Correctness: 0%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/exercisexp/vite.config.js
+suggestions for improvement:
+- The submitted code is a Vite configuration file, which is used for setting up a React project with the Vite build tool. While it's related to creating a React app, it doesn't directly address any of the specific exercises (JSX rendering, component creation, styling) outlined in the instructions. It's a setup file, not a solution to the exercises.
+Correctness: 0%
+-----
