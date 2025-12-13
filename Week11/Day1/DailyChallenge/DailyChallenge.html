@@ -1,0 +1,36 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily challenge : HTML Form</title>
+</head>
+
+<body>
+<form action="DailyChallenge.html" method="POST" id="form">
+    <input type="text" name="firstname" id="inputName">
+    <input type="text" name="lastname" id="inputLastName">
+    <input type="submit" value="Send" id="inputButton">
+</form>
+<div id="inputJson"></div>
+</body>
+
+</html>
+
+<script>
+const inputName = document.getElementById('inputName')
+const inputLastName = document.getElementById('inputLastName')
+const inputButton = document.getElementById('inputButton')
+const form = document.getElementById('form')
+const inputJson = document.getElementById('inputJson')
+form.addEventListener('submit', JsonOutput)
+function JsonOutput (e){
+    e.preventDefault();
+    const value1 = inputName.value
+    const value2 = inputLastName.value
+    const obj = {firstName : value1, lastName : value2}
+    const convertJson = JSON.stringify(obj)
+    inputJson.textContent = convertJson
+}
+
+</script>

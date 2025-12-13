@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Mario</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<script>
+    const marioGame = {
+        detail: "An amazing game!",
+        characters: {
+            mario: {
+                description: "Small and jumpy. Likes princesses.",
+                height: 10,
+                weight: 3,
+                speed: 12,
+            },
+            bowser: {
+                description: "Big and green, Hates princesses.",
+                height: 16,
+                weight: 6,
+                speed: 4,
+            },
+            princessPeach: {
+                description: "Beautiful princess.",
+                height: 12,
+                weight: 2,
+                speed: 2,
+            }
+        },
+    }
+
+const marioGameJson = JSON.stringify(marioGame, null, 2);
+//When a JavaScript object with nested objects is converted to a JSON string, the structure is preserved. The nested objects remain intact but are converted into their string representation.
+//The resulting marioGameJson variable holds a single, continuous text string.All keys and string values within the entire structure are wrapped in double quotes("), which is the fundamental rule of the JSON format.
+debugger;
+console.log("Ready for inspection...");
+</script>

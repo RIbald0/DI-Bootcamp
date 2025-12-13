@@ -1,0 +1,66 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Challenge: Gifs</title>
+</head>
+
+<body>
+    <form action="" id="myForm" method="POST">
+        <input type="text" name="input" id="inputText">
+        <button type="submit" id="inputButton">Send</button>
+    </form>
+    <button id="deleteAll">DELETE ALL</button>
+    <div id="gifContainer"></div>
+</body>
+
+</html>
+<script>
+    const inputGif = document.getElementById('myForm')
+    const inputText = document.getElementById('inputText')
+    const containerGif = document.getElementById('gifContainer')
+    const deleteAll = document.getElementById('deleteAll')
+
+
+    const getRandomGif = (randomCategory) => {
+        fetch(`https://api.giphy.com/v1/gifs/random?api_key=hpvZycW22qCjn5cRM1xtWB8NKq4dQ2My&tag=${randomCategory}`)
+            .then((response) => {
+                if (response.ok) {
+                    return response.json()
+                } else {
+                    throw new Error(`Request failed with status ${response.status}: ${response.statusText}`)
+                }
+            }).then((obj) => {
+                const gifUrl = obj.data.images.original.url
+                const mainWrapper = document.createElement('div')
+                const imgElm = document.createElement('img')
+                imgElm.src = gifUrl
+                const deleteButton = document.createElement('button')
+                deleteButton.textContent = 'DELETE'
+                mainWrapper.appendChild(imgElm)
+                mainWrapper.appendChild(deleteButton)
+                containerGif.appendChild(mainWrapper)
+                deleteButton.addEventListener('click', function () {
+                    mainWrapper.remove()
+                })
+
+            })
+
+    }
+
+    const clickSubmit = (e) => {
+        e.preventDefault()
+        getRandomGif(inputText.value)
+    }
+
+    const deleteAllGif = (e) => {
+        containerGif.replaceChildren()
+    }
+
+
+    inputGif.addEventListener('submit', clickSubmit)
+    deleteAll.addEventListener('click', deleteAllGif)
+
+
+</script>

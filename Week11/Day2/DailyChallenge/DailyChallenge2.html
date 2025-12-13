@@ -1,0 +1,111 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily challenge: Play with words 2nd</title>
+</head>
+
+<body>
+    <div id="targetMorse"></div>
+</body>
+
+</html>
+<script>
+    const morse = `{
+  "0": "-----",
+  "1": ".----",
+  "2": "..---",
+  "3": "...--",
+  "4": "....-",
+  "5": ".....",
+  "6": "-....",
+  "7": "--...",
+  "8": "---..",
+  "9": "----.",
+  "a": ".-",
+  "b": "-...",
+  "c": "-.-.",
+  "d": "-..",
+  "e": ".",
+  "f": "..-.",
+  "g": "--.",
+  "h": "....",
+  "i": "..",
+  "j": ".---",
+  "k": "-.-",
+  "l": ".-..",
+  "m": "--",
+  "n": "-.",
+  "o": "---",
+  "p": ".--.",
+  "q": "--.-",
+  "r": ".-.",
+  "s": "...",
+  "t": "-",
+  "u": "..-",
+  "v": "...-",
+  "w": ".--",
+  "x": "-..-",
+  "y": "-.--",
+  "z": "--..",
+  ".": ".-.-.-",
+  ",": "--..--",
+  "?": "..--..",
+  "!": "-.-.--",
+  "-": "-....-",
+  "/": "-..-.",
+  "@": ".--.-.",
+  "(": "-.--.",
+  ")": "-.--.-"
+}`
+
+
+    const toJs = () => new Promise((resolve, reject) => {
+        const morseJS = JSON.parse(morse);
+        if (Object.keys(morseJS).length === 0) {
+            reject('The object is empty')
+        } else {
+            resolve(morseJS)
+        }
+    })
+
+    const toMorse = (morseJS) => new Promise((resolve, reject) => {
+        const userInput = prompt('Please enter a word or a sentence: ')
+        if (!userInput) {
+            return reject('Error: No input provided.')
+        }
+        const splitInput = userInput.toLowerCase().split('')
+        const charFound = splitInput.every(elm => {
+            return elm in morseJS
+        })
+        if (charFound) {
+            const morseTranslation = splitInput.map(elm => {
+                return morseJS[elm]
+
+            })
+            resolve(morseTranslation)
+        } else {
+            reject("The charachter doesn't exist in the morse javascript object")
+        }
+    })
+
+
+    const joinWords = (morseTranslation) => {
+        const divElm = document.getElementById('targetMorse')
+        const joinedMorse = morseTranslation.join('<br>')
+        divElm.innerHTML = joinedMorse
+    }
+
+    toJs()
+        .then(morseJS => {
+            return toMorse(morseJS);
+        })
+        .then(morseTranslation => {
+            joinWords(morseTranslation);
+        })
+        .catch(error => {
+            console.error("Translation Failed:", error);
+        });
+
+</script>

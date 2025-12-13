@@ -1,0 +1,182 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Challenge: Currency Converter</title>
+    <style>
+        #title {
+            text-align: center;
+            color: black;
+            margin-top: 90px;
+        }
+
+        body {
+            background-image: url(money.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        #container {
+            text-align: center;
+            width: 500px;
+            height: 550px;
+            background-color: rgba(222, 184, 135, 0.2);
+            color: black;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            position: relative;
+        }
+
+        #container label {
+            font-size: 30px;;
+        }
+
+        #container #from-currency {
+            font-size: 20px;
+            width: 200px;
+        }
+
+        #container #to-currency {
+            font-size: 20px;
+            width: 200px;
+        }
+
+        #container #input-amount {
+            font-size: 20px;
+            width: 200px;
+        }
+
+        #container #convert-button {
+            font-size: 20px;
+            width: 100px;
+        }
+
+        #container #result-display {
+            font-size: 20px;
+            width: 305px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #container #switch {
+            font-size: 20px;
+            margin-left: 50px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title">CURRENCY CONVERTER</h1>
+    <div id="container">
+        <label for="from-currency" id="label-from">From:</label>
+        <br><br><br>
+        <select id="from-currency">
+            <option value="">Loading...</option>
+        </select>
+        <br><br><br>
+        <label for="to-currency" id="label-to">To:</label>
+        <button id="switch">Switch</button>
+        <br><br><br>
+        <select id="to-currency">
+            <option value="">Loading...</option>
+        </select>
+        <br><br><br>
+        <label for="amount" id="label-amount">Amount:</label>
+        <br><br><br>
+        <input type="number" id="input-amount">
+        <button id="convert-button">Convert</button>
+        <hr>
+        <div id="result-display">Enter amount and click Convert.</div>
+    </div>
+
+</body>
+
+</html>
+<script>
+
+    const fromInput = document.getElementById('from-currency');
+    const toInput = document.getElementById('to-currency');
+    const amountInput = document.getElementById('input-amount');
+    const buttonInput = document.getElementById('convert-button');
+    const displayConversion = document.getElementById('result-display');
+    const apiKey = 'ff1813fb35a58740e14dc00f'
+    const apiUrl= `https://v6.exchangerate-api.com/v6/${apiKey}`
+    const switchButton = document.getElementById('switch')
+
+
+    const fetchCurrency = () => {
+        fetch(`${apiUrl}/codes`)
+        .then((response) => {
+            if (response.ok){
+                return response.json()
+            } else {
+                throw new Error(`Request failed with status ${response.status}: ${response.statusText}`)
+            }
+        }).then((obj) => {
+            if (obj.result !== 'success'){
+                throw new Error(`API error:${obj['error-type'] || 'Unknown Error'}`)
+            }
+            const supportedCurrencies = obj.supported_codes
+            supportedCurrencies.forEach(element => {
+                const code = element[0];
+                const currency = element[1];
+                const currencyOption = document.createElement('option')
+                currencyOption.value = code
+                currencyOption.textContent = `${code} - ${currency}`
+                fromInput.appendChild(currencyOption)
+                toInput.appendChild(currencyOption.cloneNode(true))
+            });
+        }).catch((error) => {
+            alert('Currency is not supported')
+        })
+    }
+
+fetchCurrency()
+
+
+const convertCurrency = () => {
+    const fromCurrency = fromInput.value
+    const toCurrency = toInput.value
+    const amountAdded = amountInput.value
+    const amount = Number(amountAdded)
+    if (amount <= 0 || isNaN(amount)){
+        alert('Please enter a valid positive number');
+        return;
+    }
+    fetch(`${apiUrl}/pair/${fromCurrency}/${toCurrency}/${amount}`)
+    .then((response) => {
+        if (response.ok) {
+            return response.json()
+        } else {
+            throw new Error(`Request failed with status ${response.status}: ${response.statusText}`)
+        }
+    }).then((obj) => {
+        if (obj.result !== 'success') {
+            throw new Error(`API error:${obj['error-type'] || 'Unknown Error'}`)
+        }
+        const convertedResult = obj.conversion_result
+        displayConversion.textContent = `${convertedResult.toFixed(2)} ${toCurrency}`
+    }).catch((error) => {
+        displayConversion.textContent = 'Conversion Error';
+    })
+}
+
+
+const switchCurrency = () => {
+    const temp = fromInput.value;
+    fromInput.value = toInput.value;
+    toInput.value = temp;
+    convertCurrency()
+}
+
+
+buttonInput.addEventListener('click', convertCurrency)
+switchButton.addEventListener('click', switchCurrency)
+
+</script>

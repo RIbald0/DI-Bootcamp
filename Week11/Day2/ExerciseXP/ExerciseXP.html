@@ -1,0 +1,32 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 1 : Comparison</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const compareToTen = (num) => new Promise((resolve, reject) => {
+        if (num <= 10) {
+            resolve('Success: The number is lower than 10')
+        }
+        else { reject('Failure: The number is higher than 10') }
+    })
+
+
+    //In the example, the promise should reject
+    compareToTen(15)
+        .then(result => console.log(result))
+        .catch(error => console.log(error))
+
+    //In the example, the promise should resolve
+    compareToTen(8)
+        .then(result => console.log(result))
+        .catch(error => console.log(error))
+</script>
