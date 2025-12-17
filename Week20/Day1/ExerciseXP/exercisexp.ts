@@ -74,8 +74,8 @@ console.log(getAction("guest"));
 console.log(getAction("unknown")); 
 
 
-function greet (a: type = "Hello, stranger!"): ReturnType {
-    return a
+function greet (name: string = "Stranger"): string {
+    return `Hello, ${name}!`
 }
 
 console.log(greet("Alice"));
