@@ -1,0 +1,12 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week17/Day1/dailychallenge/server/server.js
+suggestions for improvement:
+- Consider adding error handling for unexpected server errors in the POST route.
+- For a production environment, you might want to use environment variables for the PORT.
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week17/Day1/dailychallenge/client/src/App.jsx
+suggestions for improvement:
+- Consider adding error handling to the handleSubmit function to catch potential network errors or invalid responses.
+- The handleChange function could be simplified by directly updating the state without the async keyword, as it's synchronous.
+Correctness: 100%
+-----

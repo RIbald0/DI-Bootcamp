@@ -1,0 +1,6 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day1/dailychallenge/src/App.jsx
+suggestions for improvement:
+- Consider adding error handling for image loading.
+- For larger applications, consider separating the carousel component into its own file for better organization.
+Correctness: 100%
+-----
