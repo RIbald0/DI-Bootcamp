@@ -1,0 +1,89 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/eslint.config.js
+suggestions for improvement:
+- The code provided configures eslint, which is not related to the chapter's task of building a productivity tracker with Redux. Therefore, it does not address the problem.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/index.html
+suggestions for improvement:
+- The provided code is just the basic HTML structure for a React application. It doesn't implement any of the Redux-related functionality required by the problem description, such as setting up a Redux store, defining actions and reducers, creating selectors, or building the TaskList and CategorySelector components.
+- The code is missing all the core requirements of the challenge including Redux setup, action/reducer implementation and selector creation.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/package-lock.json
+suggestions for improvement:
+- This submission only includes the `package-lock.json` file. It doesn't contain the actual code implementation required by the prompt.
+- The submission should include the source code for the Redux store setup, actions, reducers, selectors, and React components as described in the problem description.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/package.json
+suggestions for improvement:
+- The provided package.json file only specifies the dependencies and devDependencies for a React/Redux project. It does not contain any code related to the actual implementation of the Redux store, actions, reducers, selectors, or React components as described in the problem statement.
+- To address the problem statement, code implementing the Redux setup, actions, reducers, selectors, and React components for task management and category selection is required.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/App.css
+suggestions for improvement:
+- The provided code appears to be CSS styling, which does not address the Redux setup, actions, reducers, selectors, or functional components described in the problem statement.  It's entirely unrelated to the core requirements.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/App.jsx
+suggestions for improvement:
+- This code only sets up the basic structure of the App component and connects the CategorySelector and TaskList components. It doesn't include any Redux setup, actions, reducers, selectors, or task editing/completion logic as described in the problem description.  The problem description requires a full implementation using Redux, createSelector, useCallback, etc. This code is missing all of that functionality.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/app/store.js
+suggestions for improvement:
+- Need to implement actions to add, edit, delete tasks and categories, and update task progress in the tasksSlice and categoriesSlice files.
+- Implement reducers to handle these actions and update the state accordingly in the tasksSlice and categoriesSlice files.
+- Create selectors like `selectTasksByCategory`, `selectCompletedTasks`, and `selectCategoryById` using `createSelector` from reselect.
+- Implement `TaskList` and `CategorySelector` components using `useSelector` to fetch data from the Redux store.
+- Use `useCallback` for handling task editing and completion efficiently in the `TaskList` component.
+Correctness: 10.0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/categories/CategorySelector.jsx
+suggestions for improvement:
+- The code lacks the implementation of actions (add, edit, delete) and reducers for categories as requested in the instructions.
+- The code only implements the CategorySelector component and uses useSelector to fetch categories, partially addressing the instructions.
+- Consider adding dispatch calls for addCategory, editCategory, and deleteCategory when appropriate UI elements are interacted with.
+Correctness: 60%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/categories/categoriesSlice.js
+suggestions for improvement:
+- Create a separate slice for tasks, including its initial state, reducers, and actions.
+- Implement selectors for tasks as described in the instructions, such as `selectTasksByCategory` and `selectCompletedTasks`.
+- Consider using the `createEntityAdapter` from Redux Toolkit for managing tasks, as it provides optimized reducers and selectors for entity management.
+- In `deleteCategory`, directly mutate the state using `state = state.filter(...)` is not recommended in Redux. Instead, use the mutable update pattern provided by Redux Toolkit, or return a new array.
+- Add handling for updating task progress (marking tasks as completed). This feature is explicitly requested in the instructions.
+Correctness: 60%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/tasks/TaskList.jsx
+suggestions for improvement:
+- The `editTask` action is mentioned but not implemented in the TaskList component.
+- The CategorySelector component is not implemented, despite being a requirement.
+- The current implementation focuses heavily on tasks, with less attention to the category-related aspects like editing and deleting categories.
+Correctness: 70%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/tasks/tasksSlice.js
+suggestions for improvement:
+- Consider adding a selector to fetch a task by ID for editing purposes, to align more closely with the requirements.
+- Add validation or handling for edge cases in reducers (e.g., task not found in `editTask`, invalid categoryId).
+- While the provided reducers work, consider using the `immer` library, which is integrated into `@reduxjs/toolkit`, to simplify immutable updates, especially for more complex state manipulations. This can improve readability and maintainability.
+Correctness: 80%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/index.css
+suggestions for improvement:
+- The provided code is CSS styling and does not address any of the Redux-related tasks outlined in the Chapter Content/Questions.  It doesn't involve Redux setup, action/reducer implementation, selector creation, or functional component implementation. Therefore, it's completely irrelevant to the prompt.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/main.jsx
+suggestions for improvement:
+- The provided code snippet only sets up the Redux store provider and renders the main App component. It doesn't include any of the specific functionality requested in the prompt, such as reducers, actions, selectors, or components for task management.
+- The code does not implement the Redux setup for tasks and categories, actions for managing them, selectors for retrieving data, or the TaskList and CategorySelector components as specified in the prompt.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/vite.config.js
+suggestions for improvement:
+- This code only configures Vite and React, and does not implement any of the Redux-related functionality described in the problem statement.
+- Implement the Redux store, actions, reducers, selectors, and React components as described in the problem statement.
+Correctness: 0%
+-----

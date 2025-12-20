@@ -1,0 +1,11 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day3/dailychallenge/src/App.jsx
+suggestions for improvement:
+- Consider moving the renderBoolean function inside the component where it is used if it's not needed elsewhere to improve encapsulation.
+- The styling could be moved to a CSS file for better organization, but this is a minor point.
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day3/dailychallenge/src/components/FormComponent+.jsx
+suggestions for improvement:
+- Failed to download file - Status: 404
+Correctness: N/A%
+-----
