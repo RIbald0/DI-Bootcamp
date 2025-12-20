@@ -1,0 +1,19 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week3/Day2/ExerciseXP/ExerciseXP.py
+suggestions for improvement:
+- In the `Currency` class, the `__add__` and `__iadd__` methods should explicitly handle the case where `other` is neither an integer nor a `Currency` object. Currently, they only raise a `TypeError` when `other` is a `Currency` object with a different currency.  Consider adding a more general error handling mechanism for unsupported types, perhaps raising a `TypeError` with a more descriptive message.
+- The `__repr__` method is redundant.  In this case, it does the exact same thing as `__str__`.  Python generally expects `__repr__` to return an unambiguous representation suitable for debugging or reconstruction, which may not always be the same as the user-friendly string representation from `__str__`. Consider removing it or making it provide a distinctly different output (e.g., including the class name).
+- In Exercise 6, the `my_birthday` function assumes a specific date and time format ('%m/%d/%Y %H:%M:%S'). It would be more robust and user-friendly to allow for flexible date formats or to perform basic input validation. 
+- Add docstrings to functions to explain their purpose, arguments, and return values.
+- In Exercise 7,  the `add_users` function modifies the global `users` list. While it works in this simple example, it's generally better practice to avoid modifying global variables directly within functions.  Return the list from the function instead
+Correctness: 90%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week3/Day2/ExerciseXP/exercise_one.py
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week3/Day2/ExerciseXP/func.py
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----

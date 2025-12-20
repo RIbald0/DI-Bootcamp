@@ -1,0 +1,13 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/exercisexp/src/features/books/BookList.jsx
+suggestions for improvement:
+- Consider using a dropdown menu for genre selection instead of multiple buttons for better UI scalability, especially with more genres.
+- If the number of books becomes very large, consider implementing pagination or virtualization to improve performance.
+- The conditional logic for selecting books to display could be slightly refactored for improved readability using a `switch` statement or a lookup object.
+Correctness: 100%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/exercisexp/src/features/books/booksSlice.js
+suggestions for improvement:
+- You have successfully created selectors as requested by the exercise but you also need to implement the Redux store setup with necessary middleware if any and reducers, and React component and connect all of them together for better demonstration.
+- The component Implementation and UI interaction are missing which are part of the instructions, this code only covers the redux store setup and selector creation.
+Correctness: 80%
+-----
