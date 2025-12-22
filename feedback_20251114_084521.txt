@@ -1,0 +1,29 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day3/exercisexp/src/App.jsx
+suggestions for improvement:
+- The first exercise (Error Boundary Simulation) requires creating specific simulations using the ErrorBoundary and BuggyCounter components. The provided App component implements Simulation 1 and parts of Simulation 2, but doesn't fully address Simulation 2 (each BuggyCounter should be wrapped in its own ErrorBoundary). Simulation 3 is also missing (BuggyCounter without an ErrorBoundary).
+- For Exercise 2 (Lifecycle), the instructions mention starting with the XP 4 exercise from a previous day (which is missing). The App component renders a 'Color' component, which is assumed to be related to Exercise 2. Need to ensure the 'Color' component correctly implements shouldComponentUpdate, componentDidUpdate, and getSnapshotBeforeUpdate as described.
+- For Exercise 3 (Lifecycle #2), it needs to include a 'show' property in the state and conditionally render the 'Child' component based on this property with delete button. Code does not shows the implementation of state property and delete button.
+Correctness: 70%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day3/exercisexp/src/components/BuggyCounter.jsx
+suggestions for improvement:
+- Create the ErrorBoundary component in a separate file as requested.
+- Implement the ErrorBoundary component with the componentDidCatch lifecycle method to handle errors and display a fallback UI.
+- Simulate the three scenarios described in the instructions using the BuggyCounter and ErrorBoundary components.
+- In Simulation 3, make sure the application crashes when BuggyCounter isn't wrapped with ErrorBoundary.
+Correctness: 50%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day3/exercisexp/src/components/Color.jsx
+suggestions for improvement:
+- Consider adding a more descriptive name for the main component (e.g., LifecycleComponent instead of Color) to better reflect its purpose.
+- For better readability, extract the button click handlers into separate methods instead of defining them inline within the render method.
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day3/exercisexp/src/components/ErrorBoundary.jsx
+suggestions for improvement:
+- The ErrorBoundary component is well-structured, but it only addresses the Error Boundary simulation from Exercise 1. It needs to be integrated with the BuggyCounter and App components to fully demonstrate the simulations described in the exercise.
+- The getDerivedStateFromError lifecycle method is included but not strictly required for the exercise as the componentDidCatch method is used.
+- The exercises on Lifecycle methods (shouldComponentUpdate, componentDidUpdate, getSnapshotBeforeUpdate, componentWillUnmount) and event handlers are not implemented in this component. It would be beneficial to create separate components or expand upon this one to include them.
+- The code lacks the BuggyCounter component and the simulations within the App component. These need to be present for the error boundary to have something to wrap and for the simulations to be demonstrable.
+Correctness: 60%
+-----

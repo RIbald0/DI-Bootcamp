@@ -1,0 +1,6 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week20/Day2/ExerciseXP/exercisexp.ts
+suggestions for improvement:
+- In the `Product` class example, attempting to modify the `readonly` property `id` after instantiation will cause a TypeScript error during compilation. While this demonstrates the concept, it might be beneficial to include a comment explaining that the code will result in an error to make it more explicit for the learner.
+- The Calculator subtract function has a typo. substract -> subtract
+Correctness: 80%
+-----
