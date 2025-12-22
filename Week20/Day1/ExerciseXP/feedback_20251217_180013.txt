@@ -1,0 +1,6 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week20/Day1/ExerciseXP/exercisexp.ts
+suggestions for improvement:
+- Exercise 7 will only work when the Javascript is running in a browser.
+- Exercise 9 does not implement an overloaded function but default parameters, which does not meet the exercise requirement.
+Correctness: 90%
+-----
