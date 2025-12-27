@@ -1,0 +1,23 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week3/Day3/ExerciseXP/ExerciseXP.py
+suggestions for improvement:
+- In `get_words_from_file`, add error handling (try-except) to gracefully handle file not found errors.  The program currently crashes if 'words.txt' is not found.
+- In `get_random_sentence`, consider adding a check to ensure the word list is not empty before attempting to select words. An empty list will cause a runtime error.
+- Improve the input validation in `main` to handle non-integer input more robustly.  Currently, a non-integer input will raise a ValueError.  Consider using a loop to repeatedly ask for input until a valid integer is received.
+- In Exercise 2, the code directly addresses all aspects of the problem, however, the choice of date is hardcoded. It would be better to accept the birthdate from user input.
+Correctness: 95%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week3/Day3/ExerciseXP/dictionary.json
+suggestions for improvement:
+- The provided code snippet only addresses Exercise 2 (Working with JSON).  It's missing the implementation for Exercise 1 (Random Sentence Generator).
+- The code should be encapsulated within functions as specified in the instructions for Exercise 2.  Currently, it's just a JSON data structure.
+- Error handling (e.g., `try-except` blocks to handle potential `FileNotFoundError` or `KeyError` exceptions) is missing in Exercise 2.  The instructions explicitly mention error handling for Exercise 1, and it's a good practice for Exercise 2 as well.
+- Exercise 2 should explicitly show the steps of loading the JSON string, accessing the nested key, adding the new key, and saving the modified JSON to a file. This is not directly shown, it implies the steps, but a complete implementation is required.
+Correctness: 80%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week3/Day3/ExerciseXP/words.txt
+suggestions for improvement:
+- The provided code is a list of words, not a Python program.  It does not address either Exercise 1 or Exercise 2.
+- To solve Exercise 1, you need to write Python code that reads a word list from a file, generates random sentences of a specified length using those words, and handles user input validation.
+- To solve Exercise 2, you need to write Python code that parses a JSON string (the sampleJson provided), accesses and modifies a nested key in the JSON data, and saves the modified JSON to a file.
+Correctness: 0%
+-----

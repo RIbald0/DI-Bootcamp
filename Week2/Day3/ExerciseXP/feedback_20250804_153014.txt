@@ -1,0 +1,11 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week2/Day3/ExerciseXP/ExerciseXP.py
+suggestions for improvement:
+- In Exercise 1, the `find_oldest_cat` function could be made more generic to handle any number of cats, not just three.  A loop could iterate through a list of cats.
+- In Exercise 2, the size comparison is handled with if/elif/else.  Consider using a more concise approach, or a separate method for comparing sizes.
+- In Exercise 4, the `sort_animals` method could be improved by handling cases with no animals in the zoo and potential errors (like non-string animal names). Consider adding error handling and checking for empty lists before sorting and grouping animals.
+Brief justification:
+- correctness: All four exercises correctly implement the functionality described in the chapter content.  The code directly addresses object instantiation, method calls, attribute access, and data manipulation (lists and dictionaries) as specified in each exercise. Each exercise's code directly and accurately addresses the problem or implements the functionality explicitly described.
+- readability: The code is well-structured and mostly easy to follow. Variable and function names are descriptive.  However, some functions could be improved to be more generic and less reliant on hardcoded numbers (e.g., number of cats in Exercise 1).
+- performance: The performance is generally good for these small-scale examples.  However, in Exercise 1 and 4, more efficient algorithms could be used to improve performance if dealing with a much larger number of objects. The current approach is linear in the number of cats (Exercise 1) or animals (Exercise 4) which can become slow for very large datasets. Exercise 4's group sorting has a nested loop which has O(n^2) complexity.
+- security: There are no apparent security vulnerabilities in the provided code. The code operates within the defined scope of the exercises and does not handle external input or data that could lead to security risks.
+

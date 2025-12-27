@@ -1,0 +1,56 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/categories/CategorySelector.jsx
+suggestions for improvement:
+- The component fetches categories using `useSelector` which aligns with the requirements. However, it only covers the display and selection aspects, and doesn't include functionality for adding, editing, or deleting categories as requested by the instructions.
+- The component relies on an external `setSelectedCategory` prop. While this works, the instructions imply this component should handle category management internally or dispatch Redux actions for those operations.
+- Consider implementing the `addCategory`, `editCategory`, and `deleteCategory` actions within this component or a related component to fully address the requirements.
+Correctness: 60%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/categories/categoriesSlice.js
+suggestions for improvement:
+- The initial state should be defined outside the slice.
+- Consider using an adapter for managing entities with IDs.
+- Add comprehensive error handling, such as validating action payloads.
+- Consider using TypeScript to enhance type safety.
+- The selectAllCategories selector should be memoized, you can do that by using `createSelector`
+Correctness: 60%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/tasks/TaskList.jsx
+suggestions for improvement:
+- The code only implements the TaskList component and associated task actions. Category management (add, edit, delete) and the CategorySelector component are missing, which are key parts of the requirements.
+- The task editing functionality is not implemented, even though the editTask action is imported.
+- Consider using a more robust method for generating unique IDs than Date.now(), especially in larger applications or when rapid task creation is possible.
+- Selectors are used, fulfilling that requirement, but not all of them are used in the component. Specifically, `selectCategoryById` is not used.
+- Consider moving the inline styles to a separate CSS file or using a styling library for better maintainability.
+Correctness: 70%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/tasks/tasksSlice.js
+suggestions for improvement:
+- Consider using `immer` library, which is included with Redux Toolkit, to simplify state updates in your reducers. This will allow you to write more concise and readable code by directly mutating the state.
+- Add error handling and validation where appropriate. For example, you could check if a task with a given ID exists before attempting to edit or delete it.
+- Consider adding memoization to your selectors to prevent unnecessary recomputations, especially for `selectTasksByCategory` where the `categoryId` prop might change frequently.
+Correctness: 75%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/App.jsx
+suggestions for improvement:
+- The provided code only sets up the basic UI structure. It doesn't include any Redux setup, actions, reducers, selectors, task editing, or completion functionalities as requested in the prompt.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/main.jsx
+suggestions for improvement:
+- The provided code only sets up the Redux store and renders the App component within a Provider. It does not implement any of the specific functionality requested in the chapter content, such as actions, reducers, selectors, or components like TaskList and CategorySelector. It also doesn't include the useCallback implementation for task editing and completion.
+- You need to implement actions to add, edit, delete tasks/categories, and update task progress.
+- You need to create reducers to handle actions and update state.
+- Implement selectors using `createSelector` for `selectTasksByCategory`, `selectCompletedTasks`, and `selectCategoryById`.
+- Build `TaskList` and `CategorySelector` components using `useSelector`.
+- Utilize `useCallback` for task editing and completion handlers.
+Correctness: 0%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/app/store.js
+suggestions for improvement:
+- The provided code only sets up the Redux store and includes reducer slices. It does not implement any of the required functionalities such as actions, selectors, or components as specified in the problem description.
+- Missing implementations for task and category actions (add, edit, delete, update progress).
+- Missing `createSelector` implementations for `selectTasksByCategory`, `selectCompletedTasks`, and `selectCategoryById`.
+- Missing `TaskList` and `CategorySelector` components.
+- Missing `useCallback` implementations for handling task editing and completion.
+Correctness: 0%
+-----

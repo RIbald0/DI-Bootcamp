@@ -1,0 +1,28 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/categories/CategorySelector.jsx
+suggestions for improvement:
+- Implement the addCategory, editCategory, and deleteCategory actions in the component to fully meet the requirements.
+- Consider using a more semantic HTML element than a button for the category selection.  A radio button group or a select element might be more appropriate.
+- The styling is inline. While functional, consider using CSS classes for better maintainability.
+Correctness: 60%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/categories/categoriesSlice.js
+suggestions for improvement:
+- Consider creating a separate slice for tasks as described in the instructions to manage tasks and categories separately. This enhances modularity and maintainability.
+- Implement selectors for category details by ID as specifically requested (`selectCategoryById`).
+- There's no implementation of tasks here, only categories; based on the instructions, you need reducers and actions to manage tasks and their progress, which are missing.
+Correctness: 60%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/tasks/TaskList.jsx
+suggestions for improvement:
+- Consider implementing the `CategorySelector` component as described in the instructions.
+- Add functionality to edit tasks as described in the instructions.
+- Ensure all Redux actions and reducers for categories are implemented, including add, edit, and delete.
+Correctness: 75%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week19/Day3/dailychallenge/src/features/tasks/tasksSlice.js
+suggestions for improvement:
+- Consider adding error handling for when a task is not found during editing or toggling.
+- The `selectAllTasks` selector is a simple state access, consider if it's necessary or if direct state access is more appropriate in some cases.
+- Add createSlice for Categories
+Correctness: 80%
+-----
