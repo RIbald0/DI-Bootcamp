@@ -1,0 +1,6 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week20/Day1/DailyChallenge/dailychallenge.ts
+suggestions for improvement:
+- The function could be simplified to a single line return statement for better readability.
+- Consider adding more comprehensive test cases to cover different data types.
+Correctness: 100%
+-----

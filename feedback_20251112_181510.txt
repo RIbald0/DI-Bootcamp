@@ -1,0 +1,12 @@
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day2/dailychallenge/src/App.jsx
+suggestions for improvement:
+- Consider extracting the language item into its own component for better organization.
+- Using a more descriptive variable name than `newArr` and `newArr2` will improve readability.
+Correctness: 100%
+-----
+URL: URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week16/Day2/dailychallenge/src/App.css
+suggestions for improvement:
+- The provided CSS code doesn't address the core requirements of the React Voting App challenge.
+- The challenge specifically asks for the creation of a React component with state and a function to update that state based on user interaction (button clicks).  CSS styling, while important for the presentation, is not the primary focus of the instructions.
+Correctness: 0%
+-----
