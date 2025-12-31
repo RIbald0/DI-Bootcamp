@@ -1,0 +1,30 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week21/Day2/exercisexp/src/App.tsx
+suggestions for improvement:
+- Consider adding keys to the list of users rendered by the `UserList` component for better performance.
+- While not explicitly required, error handling could be improved in the `UserList` component (e.g., displaying a more user-friendly message).
+Correctness: 100%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week21/Day2/exercisexp/src/Counter.tsx
+suggestions for improvement:
+- Consider extracting the increment and decrement logic into separate functions for better readability and maintainability.
+- While string interpolation works, using template literals can slightly improve readability, especially within the `setLastAction` calls.
+Correctness: 100%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week21/Day2/exercisexp/src/Greeting.tsx
+suggestions for improvement:
+- No specific feedback.
+Correctness: 100%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week21/Day2/exercisexp/src/UserCard.tsx
+suggestions for improvement:
+- Consider using a more descriptive component name like `UserCard` instead of just `User` to better reflect its purpose, aligning with the exercise description.
+- While default values are provided directly within the destructuring assignment, you could also explore defining them within the interface itself using the `defaultValue` property if you were using PropTypes, which can improve maintainability in some cases, although this is not strictly applicable to TypeScript interfaces.
+Correctness: 100%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week21/Day2/exercisexp/src/UserList.tsx
+suggestions for improvement:
+- Consider adding more specific error handling, such as logging errors to a service for monitoring.
+- For larger datasets, consider implementing pagination or virtualization to improve performance.
+- Consider using a dedicated type for the error instead of `any`.
+Correctness: 100%
+-----
