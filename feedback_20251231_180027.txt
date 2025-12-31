@@ -1,0 +1,54 @@
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week22/Day1/ExerciseXP/controllers/authController.js
+suggestions for improvement:
+- Consider using a more robust method for storing refresh tokens, such as a database, instead of an in-memory array.  This addresses token revocation more effectively and scales better.
+- Implement more comprehensive error handling and logging, especially within the `refresh` endpoint's `jwt.verify` callback.
+- For the `/register` endpoint, consider adding a check to prevent duplicate usernames (case-insensitive).
+- For the `/login` endpoint, it could be useful to return the username along with the success message.
+Correctness: 90%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week22/Day1/ExerciseXP/controllers/userController.js
+suggestions for improvement:
+- The provided code handles user profile retrieval and updating, which relates to the exercise of allowing authenticated users to update their profile information. However, it assumes the existence of a `req.user` object populated by JWT authentication middleware, which isn't explicitly shown in the code snippet. Therefore, its correctness is limited.
+- The code directly uses an in-memory `users` array. The exercise suggests replacing this with a persistent database. The current implementation does not adhere to that suggestion.
+- Missing proper error handling and validation of user input, especially for the bio field. Consider adding length restrictions and sanitization to prevent issues.
+- The code doesn't implement token revocation or refresh token invalidation, which is an exercise objective to enhance security.
+- The code appears to be missing rate limiting to protect against brute force attacks, as described in the exercises.
+Correctness: 20%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week22/Day1/ExerciseXP/middleware/authMiddleware.js
+suggestions for improvement:
+- Consider implementing more robust error handling, such as logging the error or providing more specific error messages to the client.
+- The code relies on `req.cookies.token`. Ensure that `cookie-parser` middleware is correctly set up in the main `app.js` file to parse cookies from the request headers.
+- For enhanced security, consider using a more complex and randomly generated secret key, ensuring it's stored securely (e.g., using environment variables).
+- Think about adding a check to ensure that the `user` object extracted from the JWT contains the expected properties before assigning it to `req.user`.
+Correctness: 70%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week22/Day1/ExerciseXP/middleware/rateLimitMiddleware.js
+suggestions for improvement:
+- The code addresses the rate limiting suggestion in the exercises, but it's presented without context, so it's unclear how it integrates with the rest of the authentication flow described in the chapter content. The chapter content mentions rate limiting only in the context of exercises.
+- Consider adding more descriptive comments to explain the purpose and configuration of the rate limiter.
+- The error message could be more user-friendly and provide clearer instructions.
+Correctness: 20%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week22/Day1/ExerciseXP/models/userModel.js
+suggestions for improvement:
+- Skipping file (too many comments or blank lines).
+Correctness: N/A%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week22/Day1/ExerciseXP/routes/auth.js
+suggestions for improvement:
+- The code only defines the routes but doesn't implement the actual logic for registration, login, refresh, and logout. Implement the functions in the `authController`.
+- Add validation for user inputs in the register and login routes within the `authController`.
+- Implement password hashing using bcrypt in the register route within the `authController`.
+- Implement JWT generation using jsonwebtoken in the register and login routes within the `authController`.
+- Set JWTs as HTTP cookies with the `httpOnly` option for enhanced security within the `authController`.
+- Implement token refresh logic within the `authController`.
+Correctness: 50%
+-----
+URL: https://github.com/RIbald0/DI-Bootcamp/blob/main/Week22/Day1/ExerciseXP/app.js
+suggestions for improvement:
+- Consider adding error handling for database connections or other potential issues.
+- Ensure proper input validation and sanitization in userController to prevent injection attacks.
+- Add comprehensive logging for debugging and auditing purposes.
+Correctness: 100%
+-----
