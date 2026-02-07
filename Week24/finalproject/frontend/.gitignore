@@ -1,0 +1,27 @@
+# 1. Logs: Temporary text files that record errors or system events
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# 2. Dependencies & Build: Huge folders that can be regenerated automatically
+node_modules
+dist
+dist-ssr
+*.local
+
+# 3. Editor directories: Settings specific to your code editor (VS Code, IntelliJ)
+.vscode/*
+!.vscode/extensions.json
+.idea
+
+# 4. OS metadata: Invisible files created by your computer (macOS/Windows)
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,14 @@
+# 1. Dependency folders (The "Heavy Baggage")
+node_modules/
+
+# 2. Environment variables (The "Secrets")
+.env
+
+# 3. Logs
+logs
+*.log
+npm-debug.log*
+
+# 4. OS metadata
+.DS_Store
+Thumbs.db
