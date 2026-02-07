@@ -15,10 +15,26 @@ const PORT = process.env.PORT || 5001;
  * Global Middleware
  */
 
+const allowedOrigins = [
+    process.env.FRONTEND_URL, 
+    'http://localhost:5173',
+    'https://pollmaster-client.onrender.com' // Explicitly add your live URL to be safe
+];
+
 app.use(cors({
-    origin: [process.env.FRONTEND_URL, 'http://localhost:5173'],
+    origin: function (origin, callback) {
+        // allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    },
     credentials: true,
-}));             // Allows the Frontend to communicate with this API
+    optionsSuccessStatus: 200 // Fixes the 204 issue for some browsers
+}));
+
 app.use(express.json());     // Parses incoming JSON requests
 app.use(cookieParser());     // Parses cookies for secure Refresh Token handling
 
