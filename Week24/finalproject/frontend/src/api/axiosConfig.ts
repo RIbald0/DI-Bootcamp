@@ -48,7 +48,7 @@ api.interceptors.response.use(
                 // 3. Update the header and retry the original request
                 originalRequest.headers['Authorization'] = `Bearer ${accessToken}`;
 
-                return axios(originalRequest);
+                return api(originalRequest);
                 
             } catch (refreshError) {
                 // 4. If refresh fails, the Refresh Token is also expired -> Logout
