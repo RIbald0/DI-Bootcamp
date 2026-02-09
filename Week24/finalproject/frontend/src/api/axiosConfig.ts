@@ -29,7 +29,7 @@ api.interceptors.response.use(
             try {
                 // 1. Call your refresh endpoint to get a new access token
                 // Your backend should check the cookie and return a new token
-                const res = await axios.post(`${import.meta.env.VITE_API_URL || 'http://localhost:5001/api'}/auth/refresh-token`, {}, { withCredentials: true });
+                const res = await api.post('/auth/refresh-token');
                 
                 const { accessToken } = res.data;
 
@@ -37,8 +37,9 @@ api.interceptors.response.use(
                 localStorage.setItem('token', accessToken);
 
                 // 3. Update the header and retry the original request
-                api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
                 originalRequest.headers['Authorization'] = `Bearer ${accessToken}`;
+
+                api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
                 
                 return api(originalRequest);
             } catch (refreshError) {
