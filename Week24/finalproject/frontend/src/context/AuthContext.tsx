@@ -19,19 +19,47 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     //Runs once when the app loads.
     //It checks if the user was previously logged in by looking at localStorage
     useEffect(() => {
-        const savedUser = localStorage.getItem('user');
-        //If a user and a token are fround, we restore the session
-        if(savedUser && token){
-            try {
-            setUser(JSON.parse(savedUser));
-        } catch (error){
-            //If the data in storage is corrupted, we clear it
-            localStorage.removeItem('user');
-        }
-    }
-   //Once checked, we stop the loading state
-    setLoading(false);
-    }, [token]);
+        const initAuth = async () => {
+            const savedUser = localStorage.getItem('user');
+            const savedToken = localStorage.getItem('token');
+
+            if (savedUser && savedToken) {
+                // Scenario A: We have data, just restore it
+                setUser(JSON.parse(savedUser));
+                setToken(savedToken);
+                setLoading(false);
+            } else {
+                // Scenario B: No token? Let's try a silent refresh before giving up
+                try {
+                    // This call will send the refreshToken cookie automatically
+                    const res = await api.post('/auth/refresh-token');
+                    const { accessToken, user: userData } = res.data;
+                    
+                    // If backend accepts the cookie, we get a new access token
+                    // Now we need the user data (you might need a /auth/me endpoint)
+                    // If you don't have /me, we might have to store 'user' differently
+                    setToken(accessToken);
+                    setUser(userData);
+                    localStorage.setItem('token', accessToken);
+                    localStorage.setItem('user', JSON.stringify(userData));
+                    
+                    // If you don't have a /me endpoint, you might need to 
+                    // store the user object even if the token is gone, 
+                    // OR have your /refresh-token return the user object too.
+                } catch (error) {
+                    // Truly unauthenticated
+                    localStorage.removeItem('user');
+                    localStorage.removeItem('token');
+                    setUser(null);
+                    setToken(null);
+                } finally {
+                    setLoading(false);
+                }
+            }
+        };
+
+        initAuth();
+    }, []);
 
 
     //login: Function to update the state after a successful login API call
