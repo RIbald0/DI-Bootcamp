@@ -9,6 +9,7 @@ import voteRoutes from "./src/routes/voteRoutes.js";
 
 // Initialize the Express application and set the network port
 const app = express();
+app.set("trust proxy", 1);
 const PORT = process.env.PORT || 5001;
 
 /**

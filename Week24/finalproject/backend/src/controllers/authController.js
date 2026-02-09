@@ -47,8 +47,9 @@ export const register = async (req, res) => {
         // Set refresh token in an HTTP-only cookie for security
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            sameSite: "Strict",
-            maxAge: 7 * 24 * 60 * 60 * 1000
+            secure: process.env.NODE_ENV === "production",
+            sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+            maxAge: 7 * 24 * 60 * 60 * 1000 //7 days
         })
 
         return res.status(201).json({
@@ -105,8 +106,9 @@ export const login = async (req, res) => {
 
         res.cookie("refreshToken", refreshToken, {
             httpOnly: true,
-            sameSite: "Strict",
-            maxAge: 7 * 24 * 60 * 60 * 1000
+            secure: process.env.NODE_ENV === "production",
+            sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+            maxAge: 7 * 24 * 60 * 60 * 1000 //7 days
         })
 
         return res.json({
@@ -142,7 +144,8 @@ export const logout = async (req, res) => {
 
         res.clearCookie("refreshToken", {
             httpOnly: true,
-            sameSite: "Strict",
+            secure: process.env.NODE_ENV === "production",
+            sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
         });
 
         return res.status(200).json({ message: "Logged out successfully" });

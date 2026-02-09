@@ -29,6 +29,6 @@ export const protect = async (req, res, next) => {
     } catch (error) {
         // Log the specific error for debugging (e.g., token expired vs. fake token)
         console.error("JWT Verification Error:", error.message);
-        return res.status(403).json({ message: "Invalid or expired token." })       
+        return res.status(401).json({ message: "Invalid or expired token." })       
     }
 };
