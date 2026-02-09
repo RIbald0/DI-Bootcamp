@@ -21,6 +21,15 @@ api.interceptors.response.use(
     (response) => response, // If request is successful, do nothing
     async (error) => {
         const originalRequest = error.config;
+        
+
+        //If the error is a 401 but it's from the LOGIN or REFRESH endpoints, STOP.
+        if (
+            originalRequest.url.includes('/auth/login') || 
+            originalRequest.url.includes('/auth/refresh-token')
+        ) {
+            return Promise.reject(error);
+        }
 
         // If the error is 401 (Expired) and we haven't already tried to refresh
         if (error.response?.status === 401 && !originalRequest._retry) {
@@ -39,13 +48,17 @@ api.interceptors.response.use(
                 // 3. Update the header and retry the original request
                 originalRequest.headers['Authorization'] = `Bearer ${accessToken}`;
 
-                api.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`;
+                return axios(originalRequest);
                 
-                return api(originalRequest);
             } catch (refreshError) {
                 // 4. If refresh fails, the Refresh Token is also expired -> Logout
                 localStorage.removeItem('token');
-                window.location.href = '/login';
+                localStorage.removeItem('user');
+                
+                if (!window.location.pathname.includes('/login')) {
+                    window.location.href = '/login';
+                }
+                
                 return Promise.reject(refreshError);
             }
         }

@@ -50,13 +50,22 @@ const PollDetails = () => {
     };
 
     const togglePollStatus = async () => {
+        if(!poll) return;
         if (!window.confirm(`Are you sure you want to ${poll?.is_active ? 'close' : 're-open'} this poll?`)) return;
 
         try {
             // Hits the PATCH endpoint to flip the is_active status in the database
             await api.patch(`/polls/${id}/toggle`);
-            //Refresh data to show the new status
-            window.location.reload();
+            //Update the state locally
+            setPoll(prevPoll => {
+                if (!prevPoll) return null;
+                return {
+                    ...prevPoll,
+                    is_active: !prevPoll.is_active
+                };
+            });
+
+            alert("Poll status updated!")            
         } catch (error) {
             alert("Failed to update poll status.");
         }
